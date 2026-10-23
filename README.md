@@ -107,16 +107,6 @@ python model.py
 - `df`, `dftr`: day-level test and training predictions, with columns `encounterID`, `day`, `rawest`, `label`, `rollingscore`
 - `df2`, `dftr2`: admission-level results with the maximum `rollingscore` (from day 2 onward) and the label, used for ROC and threshold analysis
 
-## Differences from the paper
-
-- The paper uses a **multitask** logistic regression with time-varying parameters, which learns separate weights for different stages of a stay ([Wiens et al., JMLR 2016](https://jmlr.org/papers/v17/14-424.html)). This code fits a **single** L2 logistic regression. You can approximate the multitask setup by building features that depend on the stage of the stay.
-- The paper also reports the following, but the code for them is not included here:
-  - bootstrap confidence intervals
-  - calibration (Brier score)
-  - the 95th-percentile confusion matrices
-  - lead-time analysis
-  - feature-weight standard deviations
-
 ## Known issues
 
 These need small fixes before the code will run:
